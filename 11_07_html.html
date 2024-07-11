@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .transition {
+            transition: all 3000ms ease-in;
+        }
+
+        .subscribe {
+            background-color: black;
+            color: azure;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="change" onclick="changeText()" class="subscribe">Subscribe</button>
+    <div class="contentDiv"></div>
+
+    <script>
+        const start = document.createElement('input');
+        start.type = 'number';
+        start.id = 'start';
+        start.required = true;
+        start.placeholder = 'Start';
+
+        const end = document.createElement('input');
+        end.type = 'number';
+        end.required = true;
+        end.id = 'end';
+        end.placeholder = 'End';
+
+        document.body.appendChild(start);
+        document.body.appendChild(end);
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.innerText = 'Calculate';
+        btn.onclick = calculate;
+        document.body.appendChild(btn);
+
+        function calculate() {
+            const startValue = document.getElementById('start').value;
+            const endValue = document.getElementById('end').value;
+            if (startValue && endValue) {
+                const result = parseInt(startValue) + parseInt(endValue);
+                const contentDiv = document.querySelector('.contentDiv');
+                let multiplicationTables = '<table class="multiplication-table"><tr>';
+                for (let i = parseInt(startValue); i <= parseInt(endValue); i++) {
+                    multiplicationTables += '<td>';
+                    for (let j = 1; j <= 10; j++) {
+                        multiplicationTables += `${i} x ${j} = ${i * j}<br>`;
+                    }
+                    multiplicationTables += '</td>';
+                }
+                multiplicationTables += '</tr></table>';
+                contentDiv.innerHTML = multiplicationTables;
+            } else {
+                alert('Please enter valid numbers.');
+            }
+        }
+
+
+        //     document.addEventListener("DOMContentLoaded", function() {
+        //         const img = document.createElement('img');
+        //         img.src = 'download.png';
+        //         img.width = 100;
+        //         img.height = 100;
+        //         document.body.appendChild(img);
+        //     });
+
+        //     const newDiv = document.createElement('div');
+        //     newDiv.id = 'contentDiv';
+        //     newDiv.textContent = 'This is the content of the new div.';
+        //     document.body.appendChild(newDiv);
+
+        //     function changeText() {
+        //         const changeDiv = document.getElementById('change');
+        //         changeDiv.textContent = 'Subscribed';
+        //         changeDiv.classList.add('transition');  // Correct the class addition
+
+        //         const bellimg = document.createElement('img');
+        //         bellimg.src = 'bell.png';
+        //         bellimg.height = 100;
+        //         bellimg.width = 100;
+        //         document.body.appendChild(bellimg);
+        //     }
+
+        // const contentDiv = document.querySelector('.contentDiv');
+        // let multiplicationTables = '<table class="multiplication-table"><tr>';
+        // for (let i = 1; i <= 10; i++) {
+        //     multiplicationTables += '<td>';
+        //     for (let j = 1; j <= 10; j++) {
+        //         multiplicationTables += `${i} x ${j} = ${i * j}<br>`;
+        //     }
+        //     multiplicationTables += '</td>';
+        // }
+        // multiplicationTables += '</tr></table>';
+        // contentDiv.innerHTML = multiplicationTables;
+
+        //     // Add CSS styles for the tables
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .multiplication-table {
+                border-collapse: collapse;
+                margin: 10px 0;
+                width: 100%;
+            }
+            .multiplication-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                vertical-align: top;
+            }
+            .multiplication-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            .multiplication-table tr:hover {
+                background-color: #ddd;
+            }
+            .multiplication-table td:first-child {
+                font-weight: bold;
+                background-color: #f9f9f9;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
