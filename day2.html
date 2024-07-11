@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: pro;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <table style="border: 10px solid red">
+        <form action="">
+            <svg width="100" heigth="100">
+              <circle
+                cx="50"
+                cy="80"
+                r="30"
+                stroke="green"
+                stroke-width="4"
+                fill="red"
+              />
+            </svg>
+            <div>
+              <tr>
+                <td><label for="username">Username:</label></td>
+                <td>
+                  <input type="text" id="username" name="username" required />
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  <label for="Email:">Email</label>
+                </td>
+                <td>
+                  <input
+                    type="email"
+                    value="ea nmo@gmail.com"
+                    id="email"
+                    name="email"
+                    required
+                  /><br />
+                </td>
+              </tr>
+    
+              <tr>
+                <td>
+                  <label for="password">Password:</label>
+                </td>
+                <td>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                  /><br />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="browser">Select the browser:</label>
+                <td>
+                    <input  list="brow" id="browsers" >
+                    <datalist id="brow">
+                        <option value="Chrome"> 
+                        <option value="Brave">  
+                        <option value="Firefox">  
+                        <option value="Safari">
+                    </datalist>
+                </td>
+            </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="dob">DOB</label>
+                </td>
+                <td>
+                  <input type="date" id="password" name="password" required /><br />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="color">Select color:</label>
+                </td>
+                <td>
+                  <select name="" id="">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="password">Comments</label>
+                </td>
+                <td>
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="Enter pannitu pola "
+                  ></textarea>
+                  <br />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="password">Upload img :</label>
+                </td>
+                <td>
+                  <input type="file" id="password" name="password" required /><br />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="rangeInput">Select Range: </label>
+                  
+                </td>
+                  <td>
+                    <input
+                    type="range"
+                    id="rangeInput"
+                    min="0"
+                    max="100"
+                    value="50"
+                    oninput="updateRangeValue(value)"
+                  />
+                    <span id="rangeValue">50</span><br /></td>
+                
+              </tr>
+              <tr>
+                
+                <td colspan="2">
+                  <center><button>Submit</button></center>
+                </td>
+              </tr>
+            </div>
+          </form>
+        </table>
+    </div>
+</body>
+</html>

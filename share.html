@@ -1,0 +1,365 @@
+
+
+<table>
+    <caption style="padding-bottom: 5%;">Company contract person with country</caption>
+    <!-- <colgroup>
+        <col span="2" style="background-color:red">
+        <col style="background-color:yellow">
+      </colgroup> -->
+  <tr>
+    
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>COUNTRY</th>
+
+  </tr>
+  <tbody>
+  <tr>
+    <td>agalya</td>
+    <td>23</td>
+    <td>India</td>
+  </tr>
+  <tr>
+    <td>Vinusha</td>
+    <td>34</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Vidhya</td>
+    <td>45</td>
+    <td>USA</td>
+  </tr>
+  <tr>
+    <td colspan="2">Sneha</td>
+    <td>Arabic</td>
+  </tr>
+  <tr>
+    <td>Guru</td>
+    <td>18</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Gokul</td>
+    <td>20</td>
+    <td>India</td>
+  </tr>
+</tbody>
+
+
+  
+<tfoot>
+    <td>Result</td>
+    <td>Summation</td>
+    <td>end
+    </td>
+</tfoot>
+
+</table>
+<br><br>
+<table >
+    <caption >Rowspan table</caption>
+    <tr>
+      <th>Name</th>
+      <td>Vidhulya</td>
+    </tr>
+    <tr>
+      <th rowspan="2">Phone</th>
+      <td>12345</td>
+    </tr>
+    <tr>
+      <td>678910</td>
+    </tr>
+  </table>
+
+  
+
+
+
+RANGE:
+
+<label for="range">Range:</label>
+   <input type="range" id="range" name="range" min="0" max="100" oninput="outputUpdate(value)">
+   <output for="range" id="rangeOutput">50</output><br><br>
+   
+   
+   <script>
+
+  function outputUpdate(val) {
+        document.getElementById('rangeOutput').value = val;
+    }
+    </script>
+  
+
+
+LIST
+=====
+
+
+<h1>LIST</h1>
+
+
+    <h3>Unordered List</h3>
+    <ul type="circle">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+
+    <h3>Ordered List</h3>
+    <ol type="A" start="2">
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+
+    <h3>Reversed Ordered List</h3>
+    <ol type="a" reversed>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+
+    <h3>Description List</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Hypertext Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+        <dt>JS</dt>
+        <dd>JavaScript</dd>
+    </dl>
+    
+    
+    
+    
+    
+    MEDIA TAGS
+    ==========
+    
+    
+     <h1>Media Tags Example</h1>
+
+
+    <h2>Image</h2>
+    <img src="example.jpg" alt="Example Image" width="300" height="200" loading="lazy">
+
+
+    <h2>Audio</h2>
+    <audio controls preload="none">
+        <source src="audio-example.mp3" type="audio/mpeg">
+        <source src="audio-example.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <h2>Video</h2>
+    <video width="320" height="240" controls poster="video-poster.jpg">
+        <source src="video-example.mp4" type="video/mp4">
+        <source src="video-example.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <h2>Video with Subtitles</h2>
+    <video width="320" height="240" controls>
+        <source src="video-example.mp4" type="video/mp4">
+        <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+        <track src="subtitles_fr.vtt" kind="subtitles" srclang="fr" label="French">
+        Your browser does not support the video tag.
+    </video>
+
+
+
+
+https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
+
+
+
+
+
+FLEX
+===
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul
+        {
+            display: flex;
+            list-style-type: none;
+            background-color: aqua;
+            padding-top: 10px;
+            padding-bottom: 10px;
+           
+        }
+        ul li
+        {
+            /* border: 2px solid black; */
+        }
+        .home
+        {
+            flex:2; /*   2 1 0 */
+        }
+       
+    </style>
+</head>
+<body>
+    <ul >
+        <li class="home">WEB Design</li>
+        <li class="about">About</li>
+        <li class="contact">Contact</li>
+        <li class="signup">Signup</li>
+    </ul>
+  
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul
+        {
+            display: flex;
+            list-style-type: none;
+            background-color: aqua;
+            padding-top: 10px;
+            padding-bottom: 10px;
+           
+        }
+        ul li
+        {
+            /* border: 2px solid black; */
+        }
+        .home
+        {
+            flex:2; /*   2 1 0 */
+        }
+       
+    </style>
+</head>
+<body>
+    <ul >
+        <li class="home">WEB Design</li>
+        <li class="about">About</li>
+        <li class="contact">Contact</li>
+        <li class="signup">Signup</li>
+    </ul>
+  
+</body>
+</html>
+c<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul
+        {
+            display: flex;
+            list-style-type: none;
+            background-color: aqua;
+            padding-top: 10px;
+            padding-bottom: 10px;
+           
+        }
+        ul li
+        {
+            /* border: 2px solid black; */
+        }
+        .home
+        {
+            flex:2; /*   2 1 0 */
+        }
+       
+    </style>
+</head>
+<body>
+    <ul >
+        <li class="home">WEB Design</li>
+        <li class="about">About</li>
+        <li class="contact">Contact</li>
+        <li class="signup">Signup</li>
+    </ul>
+  
+</body>
+</html>
+
+
+
+
+GRID
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul
+        {
+            display: grid;
+            grid-template-columns: 2fr 3fr 1fr;
+            list-style-type: none;
+            background-color: aqua;
+            padding-top: 10px;
+            padding-bottom: 10px;
+           
+        }
+        ul li
+        {
+            border: 2px solid black;
+        }
+
+        @media (max-width:768px) {
+            ul
+            {
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <ul >
+        <li class="home">WEB Design</li>
+        <li class="about">About</li>
+        <li class="contact">Contact</li>
+        <li class="signup">Signup</li>
+    </ul>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
