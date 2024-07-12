@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #e-msg {
+            color: red;
+            font-size: 0.875em;
+        }
+        nav {
+            display: none;
+            margin-top: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const f = document.createElement('form');
+        f.id = 'loginForm';
+
+        const l1 = document.createElement('label');
+        l1.setAttribute('for', 'username');
+        l1.textContent = 'Username:';
+        f.appendChild(l1);
+
+        const i1 = document.createElement('input');
+        i1.type = 'text';
+        i1.id = 'username';
+        i1.name = 'username';
+        i1.required = true;
+        f.appendChild(i1);
+
+        const l2 = document.createElement('label');
+        l2.setAttribute('for', 'password');
+        l2.textContent = 'Password:';
+        f.appendChild(l2);
+
+        const i2 = document.createElement('input');
+        i2.type = 'password';
+        i2.id = 'password';
+        i2.name = 'password';
+        i2.required = true;
+        f.appendChild(i2);
+
+        const l3 = document.createElement('label');
+        l3.setAttribute('for', 'confirmPassword');
+        l3.textContent = 'Confirm Password:';
+        f.appendChild(l3);
+
+        const i3 = document.createElement('input');
+        i3.type = 'password';
+        i3.id = 'confirmPassword';
+        i3.name = 'confirmPassword';
+        i3.required = true;
+        f.appendChild(i3);
+
+        const b = document.createElement('button');
+        b.type = 'submit';
+        b.textContent = 'Login';
+        f.appendChild(b);
+
+        const eMsg = document.createElement('p');
+        eMsg.id = 'e-msg';
+        f.appendChild(eMsg);
+
+        document.body.appendChild(f);
+
+        const n = document.createElement('nav');
+        n.id = 'navbar';
+
+        const ul = document.createElement('ul');
+
+        const li1 = document.createElement('li');
+        const a1 = document.createElement('a');
+        a1.href = '#';
+        a1.textContent = 'Home';
+        li1.appendChild(a1);
+        ul.appendChild(li1);
+
+        const li2 = document.createElement('li');
+        const a2 = document.createElement('a');
+        a2.href = '#';
+        a2.textContent = 'About';
+        li2.appendChild(a2);
+        ul.appendChild(li2);
+
+        const li3 = document.createElement('li');
+        const a3 = document.createElement('a');
+        a3.href = '#';
+        a3.textContent = 'Contact';
+        li3.appendChild(a3);
+        ul.appendChild(li3);
+
+        n.appendChild(ul);
+        document.body.appendChild(n);
+
+        const pRegex = /^(?=.*[A-Z])[A-Za-z\d]{8,15}$/;
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            const cp = document.getElementById('confirmPassword').value;
+            const e = document.getElementById('e-msg');
+
+            if (u === '' || p === '' || cp === '') {
+                e.textContent = 'All fields are required.';
+                return;
+            }
+
+            if (!pRegex.test(p)) {
+                e.textContent = 'Password must be 8-15 characters long and include at least one uppercase letter.';
+                return;
+            }
+
+            if (p !== cp) {
+                e.textContent = 'Passwords do not match.';
+                return;
+            }
+
+            f.style.display = 'none';
+            n.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
