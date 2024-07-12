@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #error-message {
+            color: red;
+            font-size: 0.875em;
+        }
+        nav {
+            display: none;
+            margin-top: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const form = document.createElement('form');
+        form.id = 'loginForm';
+
+        const usernameLabel = document.createElement('label');
+        usernameLabel.setAttribute('for', 'username');
+        usernameLabel.textContent = 'Username:';
+        form.appendChild(usernameLabel);
+
+        const usernameInput = document.createElement('input');
+        usernameInput.type = 'text';
+        usernameInput.id = 'username';
+        usernameInput.name = 'username';
+        usernameInput.required = true;
+        form.appendChild(usernameInput);
+
+        const passwordLabel = document.createElement('label');
+        passwordLabel.setAttribute('for', 'password');
+        passwordLabel.textContent = 'Password:';
+        form.appendChild(passwordLabel);
+
+        const passwordInput = document.createElement('input');
+        passwordInput.type = 'password';
+        passwordInput.id = 'password';
+        passwordInput.name = 'password';
+        passwordInput.required = true;
+        form.appendChild(passwordInput);
+
+        const confirmPasswordLabel = document.createElement('label');
+        confirmPasswordLabel.setAttribute('for', 'confirmPassword');
+        confirmPasswordLabel.textContent = 'Confirm Password:';
+        form.appendChild(confirmPasswordLabel);
+
+        const confirmPasswordInput = document.createElement('input');
+        confirmPasswordInput.type = 'password';
+        confirmPasswordInput.id = 'confirmPassword';
+        confirmPasswordInput.name = 'confirmPassword';
+        confirmPasswordInput.required = true;
+        form.appendChild(confirmPasswordInput);
+
+        const submitButton = document.createElement('button');
+        submitButton.type = 'submit';
+        submitButton.textContent = 'Login';
+        form.appendChild(submitButton);
+
+        const errorMessage = document.createElement('p');
+        errorMessage.id = 'error-message';
+        form.appendChild(errorMessage);
+
+        document.body.appendChild(form);
+
+        const navbar = document.createElement('nav');
+        navbar.id = 'navbar';
+
+        const ul = document.createElement('ul');
+
+        const homeLi = document.createElement('li');
+        const homeLink = document.createElement('a');
+        homeLink.href = '#';
+        homeLink.textContent = 'Home';
+        homeLi.appendChild(homeLink);
+        ul.appendChild(homeLi);
+
+        const aboutLi = document.createElement('li');
+        const aboutLink = document.createElement('a');
+        aboutLink.href = '#';
+        aboutLink.textContent = 'About';
+        aboutLi.appendChild(aboutLink);
+        ul.appendChild(aboutLi);
+
+        const contactLi = document.createElement('li');
+        const contactLink = document.createElement('a');
+        contactLink.href = '#';
+        contactLink.textContent = 'Contact';
+        contactLi.appendChild(contactLink);
+        ul.appendChild(contactLi);
+
+        navbar.appendChild(ul);
+        document.body.appendChild(navbar);
+        const passwordRegex = /^(?=.*[A-Z])[A-Za-z\d]{8,15}$/;
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === '' || password === '' || confirmPassword === '') {
+                errorMessage.textContent = 'All fields are required.';
+                return;
+            }
+
+            if (!passwordRegex.test(password)) {
+                errorMessage.textContent = 'Password must be 8-15 characters long and include at least one uppercase letter.';
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match.';
+                return;
+            }
+
+            form.style.display = 'none';
+            navbar.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
